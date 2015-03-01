@@ -1,0 +1,20 @@
+{
+    "name": "balancer/b2f-composer",
+    "description": "Composer adapter for BORS© Framework",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Balancer",
+            "email": "balancer@balancer.ru"
+        }
+    ],
+
+	"prefer-stable": true,
+	"minimum-stability": "dev",
+
+    "autoload": {
+		"psr-0": {
+			"B2": "src/"
+		}
+	}
+}
