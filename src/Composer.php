@@ -12,7 +12,7 @@ class Composer
 		return COMPOSER_ROOT;
 	}
 
-	public static function instance()
+	public static function loader()
 	{
 		return $GLOBALS['bors.composer.class_loader'];
 	}
