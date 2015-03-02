@@ -25,7 +25,7 @@ class Cache
 	public static function addAutoload($name, $code)
 	{
 		$name = preg_replace('/\W+/', '_', $name);
-		if(!file_exists($d = COMPOSER_ROOT . '/bors'))
+		if(!file_exists($d = \B2\Composer::baseDir() . '/bors'))
 			mkdir($d);
 		if(!file_exists($d = $d . '/autoload'))
 			mkdir($d);
