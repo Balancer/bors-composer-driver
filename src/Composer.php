@@ -7,7 +7,7 @@ class Composer
 	public static function baseDir()
 	{
 		if(!defined('COMPOSER_ROOT'))
-			define('COMPOSER_ROOT', dirname(dirname(dirname(dirname(dirname(__DIR__))))));
+			define('COMPOSER_ROOT', dirname(dirname(dirname(dirname(__DIR__)))));
 
 		return COMPOSER_ROOT;
 	}
