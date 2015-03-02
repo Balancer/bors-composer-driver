@@ -14,7 +14,7 @@
 
     "autoload": {
 		"psr-4": {
-			"B2\\Composer\\": "./"
+			"\\B2\\Composer\\": "./"
 		}
 	}
 }
