@@ -9,7 +9,10 @@ class Cache
 	public static function appendData($name, $datum)
 	{
 		if(empty(self::$data[$name]))
-			self::$data[$name] = array($datum);
+			self::$data[$name] = array();
+
+		if(is_array($datum))
+			self::$data[$name] = array_merge(self::$data[$name], $datum);
 		else
 			self::$data[$name][] = $datum;
 	}
