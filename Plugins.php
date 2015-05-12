@@ -15,7 +15,7 @@ class Plugins
 		}
 
 		\B2\Composer\Cache::addAutoload('plugins', "B2\\Plugins::plugins = "
-			.var_export(\B2\Composer\Cache::getData('plugins/classes'))
+			.var_export(\B2\Composer\Cache::getData('plugins/classes'), true)
 			.";\n\n"
 		);
 	}
