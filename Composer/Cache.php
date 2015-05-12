@@ -37,7 +37,7 @@ class Cache
 
 		$load = "<?php\n\n";
 		foreach(glob($d.'/*.php') as $pf)
-			$load .= "require_once '".str_replace($d, './autoload/', $pf)."';\n";
+			$load .= "require_once __DIR__.'".str_replace($d, '/autoload', $pf)."';\n";
 
 		file_put_contents($d . '/../autoload.php', $load);
 	}
