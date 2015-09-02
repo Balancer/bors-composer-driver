@@ -9,6 +9,10 @@
         }
     ],
 
+	"support": {
+		"source": "https://github.com/Balancer/bors-composer-driver"
+	},
+
 	"prefer-stable": true,
 	"minimum-stability": "dev",
 
