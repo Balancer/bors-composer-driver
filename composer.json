@@ -1,5 +1,5 @@
 {
-    "name": "bors/composer",
+    "name": "bors/composer-driver",
     "description": "Composer adapter for BORS© Framework",
     "license": "GPL-3.0",
     "authors": [
