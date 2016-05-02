@@ -6,34 +6,36 @@ class Cache
 {
 	static $data = array();
 
-	public static function appendData($name, $datum)
+	public static function appendData($var_name, $datum)
 	{
-		if(empty(self::$data[$name]))
-			self::$data[$name] = array();
+		if(empty(self::$data[$var_name]))
+			self::$data[$var_name] = array();
 
 		if(is_array($datum))
-			self::$data[$name] = array_merge(self::$data[$name], $datum);
+			self::$data[$var_name] = array_merge(self::$data[$var_name], $datum);
 		else
-			self::$data[$name][] = $datum;
+			self::$data[$var_name][] = $datum;
 	}
 
-	public static function getData($name, $default = NULL)
+	public static function getData($var_name, $default = NULL)
 	{
-		if(empty(self::$data[$name]))
+		if(empty(self::$data[$var_name]))
 			return $default;
 
-		return self::$data[$name];
+		return self::$data[$var_name];
 	}
 
-	public static function addAutoload($name, $code)
+	public static function addAutoload($category_name, $code)
 	{
-		$name = preg_replace('/\W+/', '_', $name);
+		$category_name = preg_replace('/\W+/', '_', $category_name);
+
 		if(!file_exists($d = \B2\Composer::baseDir() . '/bors'))
 			mkdir($d);
+
 		if(!file_exists($d = $d . '/autoload'))
 			mkdir($d);
 
-		file_put_contents($d . '/'.$name.'.php', "<?php\n\n" . $code);
+		file_put_contents($d . '/'.$category_name.'.php', "<?php\n\n" . $code);
 
 		$load = "<?php\n\n";
 		foreach(glob($d.'/*.php') as $pf)
