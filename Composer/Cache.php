@@ -29,7 +29,7 @@ class Cache
 	{
 		$category_name = preg_replace('/\W+/', '_', $category_name);
 
-		if(!file_exists($d = \B2\Composer::baseDir() . '/bors'))
+		if(!file_exists($d = COMPOSER_ROOT . '/bors'))
 			mkdir($d);
 
 		if(!file_exists($d = $d . '/autoload'))
